@@ -1,0 +1,20 @@
+class BankAccount(val accountNumber: String, var balance: Double) {
+
+  fun deposit(amount: Double) {
+    balance += amount
+    println("Deposited $amount. New balance: $balance")
+  }
+
+  fun withdraw(amount: Double) {
+    if (balance >= amount) {
+      balance -= amount
+      println("Withdrew $amount. New balance: $balance")
+    } else {
+      println("Insufficient funds. Current balance: $balance")
+    }
+  }
+
+  fun printBalance() {
+    println("Account number: $accountNumber, Balance: $balance")
+  }
+}
