@@ -1,0 +1,12 @@
+val passwordLength = 8
+
+val charPool = ('a'..'z') + ('A'..'Z') + ('0'..'9') + listOf('!', '@', '#', '$', '%', '&', '*')
+
+val password = StringBuilder()
+for (i in 0 until passwordLength) {
+  val randomIndex = (0 until charPool.size).random()
+  val randomChar = charPool[randomIndex]
+  password.append(randomChar)
+}
+
+println("Generated password: $password")
