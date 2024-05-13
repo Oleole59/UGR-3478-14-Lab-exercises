@@ -1,0 +1,18 @@
+fun main() {
+    val originalPrice = 100.0
+    val discountPercentage = 0.6
+    val discountThreshold = 0.5
+
+    val appliedDiscountPercentage = if (discountPercentage > discountThreshold) {
+        println("The discount is too high.")
+        discountThreshold
+    } else {
+        discountPercentage
+    }
+
+    val finalPrice = originalPrice * (1 - appliedDiscountPercentage)
+
+    println("Original Price: $originalPrice")
+    println("Discount Percentage: ${(appliedDiscountPercentage * 100)}%")
+    println("Final Price: $finalPrice")
+}
