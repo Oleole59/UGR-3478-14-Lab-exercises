@@ -1,0 +1,14 @@
+fun main() {
+    val inputStrings = listOf("hello", "world", "kotlin")
+    val transformedStrings = inputStrings.map { it.toUpperCase() }
+    println(transformedStrings) // Output: [HELLO, WORLD, KOTLIN]
+
+    val inputNumbers = listOf(3, 8, 12, 5, 9)
+    val threshold = 7
+    val filteredNumbers = inputNumbers.filter { it > threshold }
+    println(filteredNumbers) // Output: [8, 12, 9]
+
+    val inputNumbers2 = listOf(1, 2, 3, 4, 5)
+    val sum = inputNumbers2.reduce { acc, num -> acc + num }
+    println(sum) // Output: 15
+}
