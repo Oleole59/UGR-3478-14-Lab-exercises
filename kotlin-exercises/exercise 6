@@ -1,0 +1,52 @@
+fun main() {
+  // Sample list
+  val numbers = listOf(5, 10, 1, 6, 9)
+
+  // Find the maximum value
+  val max = findMax(numbers)
+  println("Maximum value: $max")
+
+  // Filter even numbers
+  val evenNumbers = filterEvenNumbers(numbers)
+  println("Even numbers: $evenNumbers")
+
+  // Calculate the average
+  val average = calculateAverage(listOf(2.5, 3.8, 4.1))
+  println("Average: $average")
+}
+
+fun findMax(list: List<Int>): Int {
+  if (list.isEmpty()) {
+    println("Error: Empty list provided.")
+    return Int.MIN_VALUE
+  }
+  var max = list[0]
+  for (number in list) {
+    if (number > max) {
+      max = number
+    }
+  }
+  return max
+}
+
+fun filterEvenNumbers(list: List<Int>): List<Int> {
+  val evenList = mutableListOf<Int>()
+  for (number in list) {
+    if (number % 2 == 0) {
+      evenList.add(number)
+    }
+  }
+  return evenList
+}
+
+fun calculateAverage(list: List<Double>): Double {
+  if (list.isEmpty()) {
+    println("Error: Empty list provided.")
+    return 0.0
+  }
+  var sum = 0.0
+  for (number in list) {
+    sum += number
+  }
+  return sum / list.size
+}
