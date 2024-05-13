@@ -1,0 +1,19 @@
+fun main() {
+    print("Enter the numeric grade: ")
+    val grade = readLine()?.toIntOrNull()
+
+    val letterGrade = when (grade) {
+        in 90..100 -> "A"
+        in 80..89 -> "B"
+        in 70..79 -> "C"
+        in 60..69 -> "D"
+        in 0..59 -> "F"
+        else -> null
+    }
+
+    if (letterGrade != null) {
+        println("The letter grade is: $letterGrade")
+    } else {
+        println("Invalid grade.")
+    }
+}
