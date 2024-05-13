@@ -1,0 +1,29 @@
+fun main() {
+    print("Enter the distance value (or press Enter to use 0.0): ")
+    val distanceInput = readLine()
+    val distance = distanceInput?.toDoubleOrNull() ?: 0.0
+
+    print("Enter the unit (kilometers or miles) (or press Enter to use kilometers): ")
+    val unitInput = readLine()?.toLowerCase()
+    val unit = when (unitInput) {
+        "kilometers", "kilometer", "km" -> "kilometers"
+        "miles", "mile", "mi" -> "miles"
+        "", null -> "kilometers" // Default to kilometers if user presses Enter
+        else -> {
+            println("Invalid unit. Using kilometers by default.")
+            "kilometers"
+        }
+    }
+
+    val convertedDistance = when (unit) {
+        "kilometers" -> distance
+        "miles" -> distance * 1.60934
+        else -> {
+            // This should not happen if the code is correct, but just in case
+            println("Unexpected error. Using original distance in kilometers.")
+            distance
+        }
+    }
+
+    println("The distance is: $convertedDistance $unit.")
+}
