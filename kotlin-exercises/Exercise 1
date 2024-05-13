@@ -1,0 +1,23 @@
+fun main() {
+  println("Enter the first number:")
+  val num1 = readLine()?.toDoubleOrNull() ?: 0.0
+
+  println("Enter the second number:")
+  val num2 = readLine()?.toDoubleOrNull() ?: 0.0
+
+  println("Enter the operation (+, -, *, /):")
+  val operation = readLine() ?: ""
+
+  var result = 0.0
+  when (operation) {
+    "+" -> result = num1 + num2
+    "-" -> result = num1 - num2
+    "*" -> result = num1 * num2
+    "/" -> result = if (num2 != 0.0) num1 / num2 else { println("Division by zero is not allowed."); return }
+    else -> println("Invalid operation")
+  }
+
+  if (result != 0.0) {
+    println("The result is: $result")
+  }
+}
